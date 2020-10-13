@@ -1,29 +1,13 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:12.11.0-alpine'
-            args '-p 3000:3000'
-        }
-    }
-    environment {
-        CI = 'true'
-    }
-    stages {
+  agent any
 
-      stage('Checkout SCM') {
-          git branch: 'master', url: 'https://github.com/stekontar/test.git'
-      }
+  tools {nodejs "NodeJs-12.3.1"}
 
-      stage('Install node modules') {
-          sh "npm install"
-      }
-
-      stage("Test") {
-          sh "npm run test-headless"
-      }
-
-      stage("Build") {
-          sh "npm run build --prod"
+  stages {
+    stage('Example') {
+      steps {
+        sh 'npm config ls'
       }
     }
+  }
 }
