@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "test-headless": "ng test --watch=false --browsers=ChromeHeadlessNoSandbox"
+    "test-headless": "ng test --watch=false --source-map=false --browsers=ChromeHeadlessNoSandbox"
   },
   "private": true,
   "dependencies": {
