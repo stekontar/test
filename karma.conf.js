@@ -32,11 +32,7 @@ module.exports = function (config) {
     customLaunchers: {
       ChromeHeadlessNoSandbox: {
         base: 'ChromeHeadless',
-        flags: [
-          '--disable-web-security',
-          '--disable-gpu',
-          '--no-sandbox'
-        ]
+        flags: ['--no-sandbox', '--headless', '--disable-gpu', '--disable-translate', '--disable-extensions']
       }
     },
     singleRun: false,
