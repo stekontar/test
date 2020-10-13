@@ -1,3 +1,5 @@
+
+
 pipeline {
   agent any
 
@@ -5,23 +7,33 @@ pipeline {
 
   stages {
     stage('Checkout SCM') {
-        git branch: 'master', url: 'https://github.com/stekontar/test.git'
+        steps {
+            git branch: 'master', url: 'https://github.com/stekontar/test.git'
+        }
     }
 
     stage('Install node modules') {
-        sh "npm install"
+        steps {
+            sh "npm install"
+        }
     }
 
     stage('Install node modules') {
-        sh "npm install"
+        steps {
+            sh "npm install"
+        }
     }
 
     stage("Test") {
-        sh "npm run test-headless"
+        steps {
+            sh "npm run test-headless"
+        }
     }
 
     stage("Build") {
-        sh "npm run build --prod"
+        steps {
+            sh "npm run build --prod"
+        }
     }
   }
 }
